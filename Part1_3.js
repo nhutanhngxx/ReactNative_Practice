@@ -13,3 +13,12 @@ var koalasAverage = calcAverage(koalas).toFixed(2);
 console.log("Dolphins Average: " + dolphinsAverage);
 console.log("Koalas Average: " + koalasAverage);
 
+if (dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
+  console.log("Dolphins win!!");
+} else if (koalasAverage > dolphinsAverage && koalasAverage >= 100) {
+  console.log("Koalas win!!");
+} else if (dolphinsAverage === koalasAverage && dolphinsAverage >= 100) {
+    console.log("It's a draw!!");
+} else {
+  console.log("No one wins the trophy!!");
+}
