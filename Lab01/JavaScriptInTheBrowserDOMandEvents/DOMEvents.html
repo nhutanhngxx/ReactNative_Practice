@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Number!</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #eee;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .number {
+            font-size: 6rem;
+            width: 15rem;
+            background-color: #eee;
+            color: #333;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .label-score, .label-guess {
+            font-size: 1.5rem;
+        }
+        .score {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .guess {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            width: 50%;
+            text-align: center;
+        }
+        .check, .again {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            background-color: #60b347;
+            border: none;
+            color: #eee;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .again {
+            background-color: #333;
+        }
+        .check:hover, .again:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess My Number!</h1>
+        <p class="between">(Between 1 and 20)</p>
+        <div class="number">?</div>
+        <p class="message"></p>
+        <input type="number" class="guess" min="1" max="20">
+        <button class="check">Check!</button>
+        <button class="again">Again!</button>
+        <p class="label-score">Score: <span class="score">20</span></p>
+    </div>
+<script src="JavaScript.js"></script>
+</body>
+</html>
