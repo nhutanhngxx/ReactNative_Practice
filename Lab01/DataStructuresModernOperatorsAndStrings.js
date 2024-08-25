@@ -20,29 +20,69 @@
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 // Giả sử dữ liệu từ dịch vụ web được lưu trữ trong biến game
 const game = {
+    team1: 'Bayern Munich',
+    team2: 'Borrussia Dortmund',
+    players: [
+        [
+            'Neuer',
+            'Pavard',
+            'Martinez',
+            'Alaba',
+            'Davies',
+            'Kimmich',
+            'Goretzka',
+            'Coman',
+            'Muller',
+            'Gnarby',
+            'Lewandowski',
+        ],
+        [
+            'Burki',
+            'Schulz',
+            'Hummels',
+            'Akanji',
+            'Hakimi',
+            'Weigl',
+            'Witsel',
+            'Hazard',
+            'Brandt',
+            'Sancho',
+            'Gotze',
+        ],
+    ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+        'Hummels'],
+    date: 'Nov 9th, 2037',
     odds: {
         team1: 1.33,
         draw: 5.12,
         team2: 6.85,
     },
 };
-// 1. Tạo mảng cầu thủ cho mỗi đội
-const players1 = ['Neuer', 'Davies', 'Alaba', 'Boateng', 'Kimmich', 'Goretzka', 'Coman', 'Gnabry', 'Lewandowski', 'Müller'];
-const players2 = ['Oblak', 'Hermoso', 'Felipe', 'Savic', 'Trippier', 'Koke', 'Lemar', 'Joao Felix', 'Morata', 'Llorente'];
-// 2. Xử lý thông tin thủ môn và cầu thủ trên sân của Bayern Munich
-const gk = players1.shift(); // Lấy thủ môn ra khỏi mảng
-const fieldPlayers = players1;
-// 3. Tạo mảng tất cả cầu thủ
+
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
 const allPlayers = [...players1, ...players2];
-// 4. Cập nhật danh sách cầu thủ đội 1 sau khi thay người
+console.log(allPlayers);
+
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-// 5. Tạo biến cho các tỷ lệ cược
-const { team1, draw, team2 } = game.odds;
-// 6. Hàm in danh sách cầu thủ ghi bàn
+console.log(players1Final);
+
+const {odds: {team1, draw, team2}} = game;
+console.log(team1, draw, team2);
+
 function printGoals(...players) {
-    console.log(players.join(', '));
-    console.log(`Tổng số bàn thắng: ${players.length}`);
+    console.log(players);
+    console.log(`${players.length} goals were scored`);
 }
-// 7. Xác định đội có khả năng thắng cao hơn
-const winningTeam = ['team1', 'draw', 'team2'].reduce((prev, curr) => game.odds[prev] < game.odds[curr] ? prev : curr);
-console.log(`Đội có khả năng thắng cao hơn: ${winningTeam}`);
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals('Davies', 'Muller');
+printGoals(...game.scored);
+
+team1 < team2 && console.log('Team 1 is more likely to win');
+team2 < team1 && console.log('Team 2 is more likely to win');
