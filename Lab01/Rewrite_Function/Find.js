@@ -1,5 +1,9 @@
-
+/**
+ * @param myFind Nếu ĐÚNG trả về element đầu tiên tìm thấy.
+ * Nếu sai trả về Undefined.
+ */
 const numbers = [45,4,9,16,25];
+
 Array.prototype.myFind = function (num){
     let newArr = [];
     console.log(this);
@@ -8,5 +12,6 @@ Array.prototype.myFind = function (num){
             return this[i];
     }
 }
+
 const value = numbers.myFind(45);
 console.log(value);

@@ -1,6 +1,6 @@
 /**
  * Created by ACER on 8/26/2024.
- * @param myAny() Trả về TRUE nếu có ít nhất một phần tử thõa điều kiện. <br/>
+ * @param myAny() Trả về TRUE nếu có ít nhất một phần tử thõa điều kiện.
  * Trả về FALSE nếu không có phần tử nào thõa điều kiện
  */
 
