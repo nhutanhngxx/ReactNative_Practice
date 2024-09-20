@@ -7,8 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 const Test = () => {
   return (
     <LinearGradient colors={["#FBCB00", "#BF9A00"]} style={style.background}>
-
-
+      sfchgnc
     </LinearGradient>
   );
 };
