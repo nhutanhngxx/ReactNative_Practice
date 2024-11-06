@@ -117,6 +117,8 @@ export default function API_Screen_02({ navigation, route }) {
             renderItem={renderItem}
             keyExtractor={(item) => item.id.toString()}
             style={{}}
+            numColumns={1}
+            showsVerticalScrollIndicator={false}
           />
         </View>
         <Button
